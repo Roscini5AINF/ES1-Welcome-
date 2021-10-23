@@ -1,5 +1,8 @@
-<string name="app_name">Benvenuto nella mia applicazione!</string>
-<string name="b1">Test</string>
-<string name="b2">Reset</string>
-<string name="b3">Play</string>
-<string name="t1">Scrivi qualcosa e premi uno dei tasti.</string>
+<resources>
+    <string name="app_name">Benvenuto nella mia applicazione!</string>
+    <string name="b1">Test</string>
+    <string name="b2">Reset</string>
+    <string name="b3">Play</string>
+    <string name="t1">Scrivi qualcosa e premi uno dei tasti.</string>
+    <string name="t2">Questa è la seconda activity.</string>
+</resources>
