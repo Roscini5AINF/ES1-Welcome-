@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void play(View v){
         Intent i= new Intent(getApplicationContext(), secA.class);
-        String s= E1.getText().toString();
-        i.putExtra("messaggio", s);
+        i.putExtra("messaggio", E1.getText().toString(););
         startActivity(i);
     }
 }
