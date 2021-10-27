@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
     Button Btest;
     Button Bplay;
     EditText E1;
-
+    TextView T3;
+    public static final int TEXT_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         Bplay=(Button)findViewById(R.id.b3);
         Breset=(Button)findViewById(R.id.b2);
         Btest=(Button)findViewById(R.id.b1);
-        E1=(EditText) findViewById(R.id.E1);
+        E1=(EditText)findViewById(R.id.E1);
+        T3=(TextView)findViewById(R.id.t3);
 
 
 
@@ -36,7 +39,18 @@ public class MainActivity extends AppCompatActivity {
     }
     public void play(View v){
         Intent i= new Intent(getApplicationContext(), secA.class);
-        i.putExtra("messaggio", E1.getText().toString(););
-        startActivity(i);
+        i.putExtra("messaggio", E1.getText().toString());
+        startActivityForResult(i,TEXT_REQUEST);
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String s= data.getStringExtra(secA.reply);
+                T3.setVisibility(View.VISIBLE);
+                T3.setText(s);
+            }
+        }
     }
 }
